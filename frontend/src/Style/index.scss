@@ -1,13 +1,8 @@
 
 // @use './components/responsive';
-// @use './components/App';
+@use './Compenents/resete.scss';
 @use './Compenents/Navbar';
 @use './Compenents/Banner';
 @use './Compenents/Features';
 @use './Compenents/Footer.scss';
-// @use './page/About';
-// @use './page/Collapse';
-// @use './page/Error';
-// @use './page/Hogar';
-// @use './components/slide';
-// @use './components/Card';
+@use './Pages/Signin.scss';

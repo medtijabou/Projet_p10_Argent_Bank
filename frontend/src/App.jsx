@@ -1,19 +1,22 @@
-// App.jsx
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import Banner from './Components/Banner';
-import Features from './Components/Features';
 import Footer from './Components/Footer';
+import Home from './Pages/Home'; 
+import Signin from './Pages/Signin';
 
 function App() {
   return (
-
-    <div>
-  <Navbar />
-  <Banner />
-  <Features />
-  <Footer />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sign-in" element={<Signin />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
