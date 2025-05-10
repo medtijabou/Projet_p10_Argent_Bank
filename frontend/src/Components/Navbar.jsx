@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { logOut } from "../redux/slices/authSlice";
+import { logout } from "../redux/slices/authSlice";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../assets/img/argentBankLogo.png";
 
@@ -9,10 +9,11 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { user, token } = useSelector((state) => state.auth);
 
-  const handleLogout = () => {
-    dispatch(logOut());
+  const handleLogout = (e) => {
+    e.preventDefault(); // empêcher le comportement normal du lien
+    dispatch(logout());
     localStorage.removeItem("authtoken");
-    navigate("/");
+    navigate("/sign-in");
   };
 
   return (
@@ -29,10 +30,10 @@ const Navbar = () => {
       <div>
         {token && user ? (
           <>
-            <span className="main-nav-item">
+            <Link className="main-nav-item" to="/user">
               <i className="fa fa-user-circle" /> Hello, {user.firstName}
-            </span>
-            <Link className="main-nav-item" onClick={handleLogout}>
+            </Link>
+            <Link className="main-nav-item" to="#" onClick={handleLogout}>
               <i className="fa fa-sign-out" /> Sign Out
             </Link>
           </>
