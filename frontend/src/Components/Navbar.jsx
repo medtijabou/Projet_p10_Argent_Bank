@@ -13,7 +13,7 @@ const Navbar = () => {
     e.preventDefault(); // empêcher le comportement normal du lien
     dispatch(logout());
     localStorage.removeItem("authtoken");
-    navigate("/sign-in");
+    navigate("/");
   };
 
   return (
