@@ -48,3 +48,10 @@ export const updateUserName = async (token, newUserName) => {
     throw error;
   }
 };
+export const getUserAccounts = (token) => {
+  return axios.get("/api/user/accounts", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+};

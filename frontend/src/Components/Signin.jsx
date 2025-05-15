@@ -40,7 +40,7 @@ const SignIn = () => {
 
       dispatch(loginSuccess({ user, token }));
 
-      navigate("/user");
+      navigate("/UserProfile");
     } catch (error) {
       console.error("Erreur lors de la connexion:", error);
       setErrorMessage("Identifiants incorrects.");

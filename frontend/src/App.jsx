@@ -4,7 +4,8 @@ import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Home from './Pages/Home'; 
 import Signin from './Components/Signin';
-import EdiUser from './Components/EdiUser';
+
+import UserProfile from './Components/UserProfile';
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<Signin />} />
-          <Route path="/User" element={<EdiUser />} />
- 
+          <Route path="/UserProfile" element={<UserProfile />} /> 
+
         </Routes>
         <Footer />
       </div>
