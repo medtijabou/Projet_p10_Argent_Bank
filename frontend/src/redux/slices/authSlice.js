@@ -1,7 +1,8 @@
+// redux/slices/authSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: null,
+  user: null,   // { firstName: "...", ... } ou { userName: "..." }
   token: null,
 };
 
@@ -9,17 +10,21 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    loginSuccess: (state, action) => {
+    loginSuccess(state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
     },
-    logout: (state) => {
+    updateUserName(state, action) {
+      if (state.user) {
+        state.user.userName = action.payload;
+      }
+    },
+    logout(state) {
       state.user = null;
       state.token = null;
     },
   },
 });
 
-export const { loginSuccess, logout } = authSlice.actions; // ← ⚠️ ICI !
-
+export const { loginSuccess, logout, updateUserName } = authSlice.actions;
 export default authSlice.reducer;

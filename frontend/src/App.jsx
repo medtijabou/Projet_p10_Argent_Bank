@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import Home from './Pages/Home'; 
-import Signin from './Pages/Signin';
-import User from './Pages/User';
+import Signin from './Components/Signin';
+import EdiUser from './Components/EdiUser';
+
 function App() {
   return (
     <BrowserRouter>
@@ -13,8 +14,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-in" element={<Signin />} />
-          <Route path="/user" element={<User />} />
-    
+          <Route path="/User" element={<EdiUser />} />
+ 
         </Routes>
         <Footer />
       </div>

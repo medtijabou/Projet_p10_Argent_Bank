@@ -10,9 +10,9 @@ const Navbar = () => {
   const { user, token } = useSelector((state) => state.auth);
 
   const handleLogout = (e) => {
-    e.preventDefault(); // empêcher le comportement normal du lien
+    e.preventDefault();
     dispatch(logout());
-    localStorage.removeItem("authtoken");
+    localStorage.removeItem("authToken"); // attention à la casse ici
     navigate("/");
   };
 
@@ -31,7 +31,7 @@ const Navbar = () => {
         {token && user ? (
           <>
             <Link className="main-nav-item" to="/user">
-              <i className="fa fa-user-circle" /> Hello, {user.firstName}
+              <i className="fa fa-user-circle" /> Hello, {user.userName || user.firstName}
             </Link>
             <Link className="main-nav-item" to="#" onClick={handleLogout}>
               <i className="fa fa-sign-out" /> Sign Out
