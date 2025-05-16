@@ -65,26 +65,29 @@ const UserProfile = () => {
           <br />
           {isEditing ? (
             <>
-              <input
-                type="text"
-                value={newFirstName}
-                onChange={(e) => setNewFirstName(e.target.value)}
-                placeholder="First Name"
-                style={{ marginRight: "10px" }}
-              />
-              <input
-                type="text"
-                value={newLastName}
-                onChange={(e) => setNewLastName(e.target.value)}
-                placeholder="Last Name"
-                style={{ marginRight: "10px" }}
-              />
+            <section className="input_user">
+                
               <input
                 type="text"
                 value={newUserName}
                 onChange={(e) => setNewUserName(e.target.value)}
-                placeholder="Email / Username"
+                placeholder="Username"
               />
+              <input
+                type="text"
+                value={newFirstName}
+                readOnly
+                placeholder="First Name"
+            
+              />
+              <input
+                type="text"
+                value={newLastName}
+               readOnly
+                placeholder="Last Name"
+               
+              />
+            </section>
             </>
           ) : (
             <>
@@ -92,7 +95,7 @@ const UserProfile = () => {
               {user.userName ? ` (${user.userName})` : ""}
             </>
           )}
-          !
+          
         </h1>
 
         {isEditing ? (

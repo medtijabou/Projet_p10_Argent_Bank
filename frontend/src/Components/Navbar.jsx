@@ -30,7 +30,7 @@ const Navbar = () => {
       <div>
         {token && user ? (
           <>
-            <Link className="main-nav-item" to="/user">
+            <Link className="main-nav-item" to="/UserProfile">
               <i className="fa fa-user-circle" /> Hello, {user.userName || user.firstName}
             </Link>
             <Link className="main-nav-item" to="#" onClick={handleLogout}>
