@@ -4,7 +4,7 @@ import { logout } from "../redux/slices/authSlice";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../assets/img/argentBankLogo.png";
 
-const Navbar = () => {
+const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user, token } = useSelector((state) => state.auth);
@@ -12,11 +12,13 @@ const Navbar = () => {
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
-    localStorage.removeItem("authToken"); // attention à la casse ici
+    localStorage.removeItem("authToken"); 
     navigate("/");
   };
-
+  
   return (
+    <header>
+    
     <nav className="main-nav">
       <Link className="main-nav-logo" to="/">
         <img
@@ -44,7 +46,9 @@ const Navbar = () => {
         )}
       </div>
     </nav>
+    </header>
   );
 };
 
-export default Navbar;
+export default Header;
+  ;
