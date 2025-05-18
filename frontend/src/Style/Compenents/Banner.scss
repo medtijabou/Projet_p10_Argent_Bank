@@ -1,7 +1,6 @@
-
 .hero {
-    background-image: url('src/assets/img/bank-tree.jpeg');
-    background-position: 0 -50px;
+  background-image: url('src/assets/img/bank-tree.jpeg');
+  background-position: center !important;
   background-size: cover;
   background-repeat: no-repeat;
   height: 300px;
@@ -11,7 +10,8 @@
 .hero-content {
   position: relative;
   top: 2rem;
-  width: 200px;
+  left:400px;
+  width: 300px;
   background: white;
   padding: 2rem;
   text-align: left;
@@ -29,7 +29,7 @@
   font-size: 0.9rem;
 }
 
-@media (min-width: 920px) {
+@media (max-width: 1025px) {
   .hero {
     height: 400px;
     background-position: 0% 33%;
@@ -38,7 +38,7 @@
   .hero-content {
     position: absolute;
     top: 50px;
-    right: 50px;
+    left:35rem;
     width: 300px;
     margin: 2rem;
   }
@@ -52,3 +52,44 @@
   }
 }
 
+
+@media(max-width:768px) {
+  .hero-content {
+    top: 2rem;
+    width: 200px;
+    padding: 10px;
+    left: 30rem;
+
+  }
+
+  .hero-content .subtitle {
+
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .hero-content .text {
+    font-size: 16px;
+  }
+}
+
+
+@media(max-width:20rem) {
+  .hero-content {
+    top: 2rem;
+    width: 80px;
+    padding: 10px;
+    left: 11rem;
+
+  }
+
+  .hero-content .subtitle {
+
+    font-size: 8px;
+    margin: 0;
+  }
+
+  .hero-content .text {
+    font-size: 8px;
+  }
+}
