@@ -6,7 +6,7 @@ import { loginUser, getUserProfile } from "../api/auth";
 import "../Style/index.scss";
 
 const SignIn = () => {
-    document.title = 'Argent Bank - Home Page'
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -34,7 +34,8 @@ const SignIn = () => {
       }
 
       localStorage.setItem("authToken", token);
-
+      localStorage.setItem("loginTime", Date.now()); 
+      
       const profileResponse = await getUserProfile(token);
       const user = profileResponse.data.body;
 
