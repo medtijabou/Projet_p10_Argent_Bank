@@ -1,0 +1,33 @@
+[
+    {
+        "id": "string",
+        "month": "string",
+        "date": "string",
+        "description": "string",
+        "amount": "string",
+        "balance": "string",
+        "type": "string",
+        "category": "string",
+        "note": "string"
+      },
+  {
+    "id": "1",
+    "date": "2025-05-01",
+    "description": "Achat supermarché",
+    "amount": "-50.00",
+    "balance": "950.00",
+    "type": "debit",
+    "category": "Alimentation",
+    "note": "Fruits et légumes"
+  },
+  {
+    "id": "2",
+    "date": "2025-05-03",
+    "description": "Salaire",
+    "amount": "2000.00",
+    "balance": "2950.00",
+    "type": "credit",
+    "category": "Salaire",
+    "note": ""
+  }
+]
